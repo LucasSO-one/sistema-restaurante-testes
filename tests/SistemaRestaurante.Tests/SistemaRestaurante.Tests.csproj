@@ -27,7 +27,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ProgramPrinc\ProgramPrinc.csproj" />
-    <ProjectReference Include="..\..\API_Banco\API_Banco.csproj" />
   </ItemGroup>
 
 </Project>
