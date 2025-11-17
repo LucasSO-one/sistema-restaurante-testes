@@ -31,5 +31,27 @@ namespace SistemaRestaurante.Tests.Models
             Assert.Equal("Hambúrguer", produto.Nome);
             Assert.Equal(25.90, produto.Preco);
         }
+        
+        [Fact]
+        public void Produto_ComPrecoZero_DeveSerPermitido()
+        {
+            var produto = new global::Dominio.Produto 
+            { 
+                Nome = "Amostra Grátis", 
+                Preco = 0 
+            };
+            Assert.Equal(0, produto.Preco);
+        }
+
+        [Fact]
+        public void Produto_ComNomeLongo_DeveSerPermitido()
+        {
+            var produto = new global::Dominio.Produto 
+            { 
+                Nome = "Hambúrguer Artesanal com Queijo e Bacon", 
+                Preco = 35.90 
+            };
+            Assert.Equal("Hambúrguer Artesanal com Queijo e Bacon", produto.Nome);
+        }
     }
 }
