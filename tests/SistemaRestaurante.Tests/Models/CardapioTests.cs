@@ -14,5 +14,17 @@ namespace SistemaRestaurante.Tests.Models
             Assert.NotNull(cardapio.Produtos);
             Assert.Empty(cardapio.Produtos);
         }
+
+        [Fact]
+        public void Cardapio_ComTipoCardapio_DeveSerCriadoCorretamente()
+        {
+            var cardapio = new global::Dominio.Cardapio 
+            { 
+                Id = 1, 
+                TipoCardapio = "Jantar" 
+            };
+            Assert.Equal(1, cardapio.Id);
+            Assert.Equal("Jantar", cardapio.TipoCardapio);
+        }
     }
 }
