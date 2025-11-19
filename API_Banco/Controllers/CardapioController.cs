@@ -31,13 +31,14 @@ public class CardapioController : ControllerBase
     }
 
     //Listar Cardapios Disponiveis
+    // CORREÇÃO 1: Retornar a lista em vez do repositório
     [HttpGet]
     public IActionResult ListarCardapios()
     {
         var list = cardapioRepositorio.ListarCardapio();
         if (list.Count > 0)
         {
-            return Ok(cardapioRepositorio);
+            return Ok(list);
         }
         else if (list.Count <= 0)
         {
