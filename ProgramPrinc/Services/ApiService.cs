@@ -55,7 +55,7 @@ public class ApiService
         HttpResponseMessage response = await _client.PostAsync("https://localhost:7049/api/Produto", texto);
         response.EnsureSuccessStatusCode();
     }
-    public async void CriarNovoCardapioAsync(Cardapio cardapio)
+    public async Task CriarNovoCardapioAsync(Cardapio cardapio)
     {
         try
         {
@@ -69,7 +69,7 @@ public class ApiService
             Console.WriteLine($"Erro ao enviar requisição HTTP: {ex.Message}");
         }
     }
-    public async void CriarNovaComandaAsync(Comanda comanda)
+    public async Task CriarNovaComandaAsync(Comanda comanda)
     {
         string json = JsonConvert.SerializeObject(comanda);
         StringContent texto = new StringContent(json, Encoding.UTF8, "application/json");
