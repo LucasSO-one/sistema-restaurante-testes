@@ -40,7 +40,8 @@ class Program
 
                                 try
                                 {
-                                    servicoApi.CriarNovoCardapioAsync(cardapio);
+                                    await servicoApi.CriarNovoCardapioAsync(cardapio);
+
                                 }
                                 catch (HttpRequestException ex)
                                 {
@@ -127,7 +128,7 @@ class Program
 
                                 try
                                 {
-                                    servicoApi.CriarNovoProdutoAsync(produto);
+                                    await servicoApi.CriarNovoProdutoAsync(produto);
                                     Console.WriteLine("Cadastrado com Sucesso");
                                     Console.ReadKey();
                                 }
@@ -202,7 +203,7 @@ class Program
                                 }
                                 try
                                 {
-                                    servicoApi.CriarNovaComandaAsync(comanda);
+                                    await servicoApi.CriarNovaComandaAsync(comanda);
                                     Console.WriteLine("Comanda Criada com Sucesso!");
                                 }
                                 catch (HttpRequestException ex)
